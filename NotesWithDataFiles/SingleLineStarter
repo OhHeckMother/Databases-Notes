@@ -1,0 +1,13 @@
+ELEM_PER_REC = 4
+
+with open('data.txt') as infile:
+    raw_data = infile.readlines()    # reads the file into a list of strings
+    subtotal = 0.0
+    for i in range(0, len(raw_data), ELEM_PER_REC):   # iterates through entire list
+        price   = float(raw_data[i].rstrip())  # obtain element 1 of 4
+        qty     = int(raw_data[i+1].rstrip())  # obtain element 2 of 4
+        part_nr = raw_data[i+2].rstrip()       # obtain element 3 of 4
+        desc    = raw_data[i+3].rstrip()       # obtain element 4 of 4
+        subtotal += price * qty
+        print(price, qty, part_nr, desc)
+    print(subtotal) # $2290.02
