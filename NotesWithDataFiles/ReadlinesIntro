@@ -1,0 +1,10 @@
+with open('data.txt') as infile:
+
+   a = infile.readlines()
+   new_list = []
+  
+   for i in range(10):
+     element = a[i].rstrip()
+     element = int(element)
+     new_list.append(element)
+   print(new_list)
