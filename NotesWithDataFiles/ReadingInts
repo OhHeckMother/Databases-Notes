@@ -1,0 +1,10 @@
+with open('data.txt') as infile:
+    a = infile.readlines()    # reads the file into a list of strings
+    new_list = []             # create an empty list to store cleaned data
+    for i in range(len(a)):   # iterates as many times as needed given a's size
+        elem = int(a[i].rstrip())  # strips the \n and makes it an int
+        new_list.append(elem) # append the cleaned element to the new list
+    print(new_list)
+    print(sum(new_list))
+    print(max(new_list))
+    print(min(new_list))
